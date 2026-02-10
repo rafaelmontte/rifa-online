@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #b989e4;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.info {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 30px 0 0;
+    text-align: center;
+}
+
+.container-input {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px 30px;
+}
+
+.container-input p {
+    width: 300px;
+}
+
+.container-input p span {
+    font-size: 1.6rem;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 1.8rem;
+    border: 1px solid #a3a3a3;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+}
+
+input::placeholder {
+    font-size: 1.4rem;
+}
+
+p.text {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.tabela {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 14px;
+    width: 100%;
+    max-width: 900px;
+    padding: 14px;
+    margin: 20px auto;
+    background-color: #dabbf5;
+}
+
+.numero {
+    aspect-ratio: 1 / 1;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: #f2f2f2;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    user-select: none;
+}
+
+.numero.selecionado {
+    background: #b8ee3b;
+    color: white;
+}
+
+.numero.vendido {
+    background: #f57b3594;
+    cursor: not-allowed;
+    color: #f1d2d2;
+}
+
+.confirmar {
+    margin: 10px 30px 50px;
+    padding: 10px 20px;
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: rgb(247, 156, 92);
+    cursor: pointer;
+    color: #fff;
+}
+
+#paginaAtual {
+    color: #000;
+    font-weight: bold;
+}
+
+.paginacao {
+    margin: 10px;
+}
+
+.paginacao button {
+    margin: 10px;
+    width: 80px;
+    height: 50px;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.paginacao span {
+    font-size: 1.8rem;
+    margin: 0 10px;
+}
+
+.valor-total {
+    margin-bottom: 40px;
+}
+
+.valor-total span {
+    font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        text-align: center;
+    }
+
+    p.text {
+        font-size: 1.6rem;
+    }
+
+    .container-input {
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-input p {
+        width: 90vw;
+        margin-top: 30px;
+    }
+
+    .container-input p span {
+        font-size: 1.8rem;
+    }
+
+    .container-input p input {
+        width: 100%;
+    }
+
+    .tabela {
+        width: 90vw;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+
+    .numero {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tabela {
+        gap: 4px;
+    }
+
+
+    .numero {
+        aspect-ratio: 1;
+        min-height: 34px;
+        font-size: 1.4rem;
+    }
+
+    .paginacao span {
+        font-size: 1.6rem;
+    }
+
+    .paginacao button {
+        margin: 5px;
+        width: 60px;
+        height: 40px;
+        font-size: 2rem;
+    }
+
+}

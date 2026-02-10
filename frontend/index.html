@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rifa Congresso JUMP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>RIFA PREMIADA (Prêmio R$500 no Pix)</h1>
+
+    <div class="container-input">
+        <p>
+            <span>Nome e Sobrenome:</span>
+            <input type="text" class="nome" id="nome" placeholder="Nome e Sobrenome">
+        </p>
+        <p>
+            <span>Número para contato:</span>
+            <input type="text" class="contato" name="contato" id="contato" placeholder="Whatssap">
+        </p>
+    </div>
+
+    <p class="text">Escolha seu pontos abaixo</p>
+
+    <div class="tabela" id="tabela"></div>
+
+    <div class="paginacao">
+        <button onclick="paginaAnterior()">⬅</button>
+        <span id="paginaAtual">1</span>
+        <button onclick="proximaPagina()">➡</button>
+    </div>
+
+    <div class="valor-total">
+        <span>Total: </span>
+        <span id="valor" class="valor">R$0,00</span>
+    </div>
+
+    <p class="info">ATENÇÃO: O Sorteio será feito após todos os números serem comprados! BOA SORTE!!! :)</p>
+
+    <button class="confirmar" onclick="confirmarCompra()">
+        Confirmar e ir para o pagamento
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
