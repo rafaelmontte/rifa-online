@@ -95,11 +95,28 @@ async function confirmarCompra() {
         // LIMPAR E IR PARA PAGAMENTO
         numerosSelecionados = [];
         carregarNumeros();
+        // window.location.href = "https://nubank.com.br/cobrar/16xttq/69875e95-092a-44b1-8eed-57c324425491";
         window.location.href = "pagamento.html";
+
+
+
+
     } catch (error) {
         console.error(error);
         alert("Erro de conexão com o servidor");
     }
+}
+
+function copiarPix() {
+    const chavePix = "00020126330014BR.GOV.BCB.PIX0111613539213105204000053039865802BR5901N6001C62100506RAFAEL6304D682"
+
+    navigator.clipboard.writeText(chavePix)
+        .then(() => {
+            alert("Chave Pix copiada!");
+        })
+        .catch(() => {
+            alert("Erro ao copiar");
+        });
 }
 
 carregarNumeros();

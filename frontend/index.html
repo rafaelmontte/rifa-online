@@ -11,20 +11,44 @@
 
 <body>
 
-    <h1>RIFA PREMIADA (Prêmio R$500 no Pix)</h1>
+    <div class="home">
+        <h1>RIFA JUMP SUMARÉ</h1>
+        <p class="paragrafo">Nos Ajude a Chegar ao Congresso Nacional de Jovens.</p>
 
-    <div class="container-input">
-        <p>
-            <span>Nome e Sobrenome:</span>
-            <input type="text" class="nome" id="nome" placeholder="Nome e Sobrenome">
-        </p>
-        <p>
-            <span>Número para contato:</span>
-            <input type="text" class="contato" name="contato" id="contato" placeholder="Whatssap">
-        </p>
+        
+
+        <p class="descricao">Estamos promovendo esta rifa para participar do Congresso Nacional JUMP SUMARÉ. <br>
+            Sua contribuição faz toda a diferença! <br>
+            Participe e concorra a um prêmio especial!</p>
+
+        <div class="container-valores">
+            <div class="valor-pontos">
+                <h3>Valor:</h3> <span>R$5,00</span>
+                <p>cada</p>
+            </div>
+            <div class="premio">
+                <p>Prêmio</p>
+                <h3>R$500,00</h3>
+                <span>no PIX</span>
+            </div>
+        </div>
+
+        <div class="container-input">
+            <h2>Preencha seus dados</h2>
+            <form class="form">
+                <p>
+                    <span>Nome e Sobrenome:</span>
+                    <input type="text" class="nome" id="nome" placeholder="Nome e Sobrenome">
+                </p>
+                <p>
+                    <span>Número para contato:</span>
+                    <input type="text" class="contato" name="contato" id="contato" placeholder="Whatssap">
+                </p>
+            </form>
+        </div>
     </div>
 
-    <p class="text">Escolha seu pontos abaixo</p>
+    <p class="text">Escolha seu ponto abaixo e confirme no final da página</p>
 
     <div class="tabela" id="tabela"></div>
 
@@ -39,7 +63,7 @@
         <span id="valor" class="valor">R$0,00</span>
     </div>
 
-    <p class="info">ATENÇÃO: O Sorteio será feito após todos os números serem comprados! BOA SORTE!!! :)</p>
+    <p class="info">O Sorteio será realizado no dia <strong>29 de Março</strong> após o culto na Base Bob Kennedy.</p>
 
     <button class="confirmar" onclick="confirmarCompra()">
         Confirmar e ir para o pagamento

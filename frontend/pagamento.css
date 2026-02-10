@@ -17,73 +17,212 @@ body {
     background-color: #ffffff;
     width: 100vw;
     height: 100vh;
-    padding: 0 15px;
-}
-
-h1 {
-    font-size: 3rem;
-    margin: -130px 0;
-}
-
-.pagamento {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px;
+    justify-content: space-evenly;
 }
 
-.pagamento h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-
-.dados {
+.container-pagamento {
+    max-width: 800px;
+    width: 90vw;
+    height: 100%;
+    border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.pagamento p:last-child {
-    font-size: 1.6rem;
     margin-top: 50px;
+}
+
+.container-qrcode {
+    background-color: #820AD1;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.container-qrcode h1 {
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.pagamento .chave {
-    font-size: 2rem;
+.container-qrcode p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
 }
 
-.pagamento p {
+.container-qrcode .qrcode {
+    margin: 20px 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.container-qrcode .qrcode img {
+    width: 100%;
+}
+
+.container-qrcode .valor {
+    margin: 10px 0 20px;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.container-qrcode .valor .preco {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.container-qrcode .copy-icon {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.copy-icon::after {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    padding-left: 10px;
+    vertical-align: top;
+    content: url(/img/copy-outline.svg);
+}
+
+
+.chave-aleatoria::after {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    content: url(/img/copy-outline.svg);
+}
+
+.container-dados-pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 280px;
+}
+
+.container-dados-pix h2 {
+    margin: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.container-dados-pix hr {
+    border: 1px solid #eee;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container-dados-pix .dados {
+    width: 100%;
+}
+
+.container-dados-pix .dados div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
     font-size: 1.6rem;
 }
 
-.pagamento img {
-    margin: 10px auto;
-    width: 20rem;
+.container-dados-pix .dados div p {
+    font-weight: 600;
+}
+
+.container-dados-pix .logo-nubank {
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+.container-pagamento p:last-child {
+    text-align: center;
+    padding: 0 10px;
 }
 
 footer p {
-    margin-top: 130px;
     font-size: 1.4rem;
     text-align: center;
+    margin: 20px 0;
+    padding: 0 10px;
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
 
-    .pagamento h2 {
-        font-size: 2rem;
+    .container-pagamento {
+        margin-top: 20px;
     }
 
-    .pagamento p {
+    .container-qrcode h1 {
+        font-size: 1.6rem;
+    }
+
+    .container-qrcode p {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+    .container-qrcode .qrcode {
+        width: 150px;
+        height: 150px;
+    }
+
+    .container-qrcode .valor {
         font-size: 1.4rem;
     }
 
-    .pagamento p:last-child {
+    .container-qrcode .valor .preco {
+        font-size: 1.6rem;
+    }
+
+    .container-qrcode .copy-icon {
+        font-size: 1.2rem;
+    }
+
+    .copy-icon::after {
+        width: 15px;
+        height: 15px;
+    }
+
+
+    .container-dados-pix {
+        max-width: 300px;
+    }
+
+    .container-dados-pix h2 {
+        margin: 2rem;
         font-size: 1.4rem;
+    }
+
+    .container-dados-pix .dados div {
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+    }
+
+    .container-dados-pix .logo-nubank {
+        width: 25px;
+    }
+
+    .container-pagamento p:last-child {
+        text-align: center;
     }
 
     footer p {
-    font-size: 1.2rem;
-}
+        font-size: 1.2rem;
+    }
+
 
 }
