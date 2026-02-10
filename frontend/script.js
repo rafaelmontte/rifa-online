@@ -5,7 +5,7 @@ let vendidos = [];
 const precoAtual = document.getElementById("valor");
 
 async function carregarVendidos() {
-    const res = await fetch("http://localhost:3000/numeros-vendidos");
+    const res = await fetch("https://rifa-online-lfud.onrender.com/numeros-vendidos");
     vendidos = await res.json();
 }
 
@@ -77,7 +77,7 @@ async function confirmarCompra() {
     try {
         // SALVAR COMPRA
 
-        await fetch("http://localhost:3000/comprar", {
+        await fetch("https://rifa-online-lfud.onrender.com/comprar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome, contato, numeros: numerosSelecionados })
