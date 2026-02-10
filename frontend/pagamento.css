@@ -24,14 +24,13 @@ body {
 }
 
 .container-pagamento {
-    max-width: 800px;
+    max-width: 500px;
     width: 90vw;
-    height: 100%;
     border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .container-qrcode {
@@ -47,20 +46,21 @@ body {
 .container-qrcode h1 {
     margin-bottom: 10px;
     text-align: center;
+    font-size: 3rem;
 }
 
 .container-qrcode p {
     text-align: center;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .container-qrcode .qrcode {
     margin: 20px 0;
     padding: 1rem;
     background-color: #ffffff;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 8px;
 }
 
@@ -70,33 +70,34 @@ body {
 
 .container-qrcode .valor {
     margin: 10px 0 20px;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 300;
 }
 
 .container-qrcode .valor .preco {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-weight: 700;
 }
 
 .container-qrcode .copy-icon {
-    padding: 10px 15px;
+    padding: 20px 15px;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
     border: none;
+    background-color: #ffffff;
+    font-size: 2rem;
 }
 
 .copy-icon::after {
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    width: 33px;
+    height: 33px;
     padding-left: 10px;
     vertical-align: top;
-    content: url(/img/copy-outline.svg);
+    content: url(img/copy-outline.svg);
 }
-
 
 .chave-aleatoria::after {
     display: inline-block;
@@ -105,14 +106,14 @@ body {
     vertical-align: bottom;
     padding-bottom: 2px;
     padding-left: 5px;
-    content: url(/img/copy-outline.svg);
+    content: url(img/copy-outline.svg);
 }
 
 .container-dados-pix {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 280px;
+    width: 90%;
 }
 
 .container-dados-pix h2 {
@@ -123,7 +124,7 @@ body {
 
 .container-dados-pix hr {
     border: 1px solid #eee;
-    width: 100%;
+    width: 50%;
     margin-bottom: 20px;
 }
 
@@ -143,21 +144,21 @@ body {
 }
 
 .container-dados-pix .logo-nubank {
-    width: 30px;
+    width: 45px;
     margin-bottom: 10px;
 }
 
 .container-pagamento p:last-child {
     text-align: center;
-    padding: 0 10px;
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
 }
 
 footer p {
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-align: center;
     margin: 20px 0;
     padding: 0 10px;
-
 }
 
 @media (max-width: 425px) {
@@ -167,62 +168,85 @@ footer p {
     }
 
     .container-qrcode h1 {
-        font-size: 1.6rem;
+        font-size: 2.6rem;
     }
 
     .container-qrcode p {
         font-weight: 400;
-        font-size: 1.2rem;
-    }
-
-    .container-qrcode .qrcode {
-        width: 150px;
-        height: 150px;
-    }
-
-    .container-qrcode .valor {
-        font-size: 1.4rem;
-    }
-
-    .container-qrcode .valor .preco {
         font-size: 1.6rem;
     }
 
+    .container-qrcode .qrcode {
+        width: 225px;
+        height: 225px;
+    }
+
+    .container-qrcode .valor {
+        font-size: 1.8rem;
+    }
+
+    .container-qrcode .valor .preco {
+        font-size: 2rem;
+    }
+
     .container-qrcode .copy-icon {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .copy-icon::after {
-        width: 15px;
-        height: 15px;
-    }
-
-
-    .container-dados-pix {
-        max-width: 300px;
+        width: 25px;
+        height: 25px;
     }
 
     .container-dados-pix h2 {
         margin: 2rem;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     .container-dados-pix .dados div {
         margin-bottom: 8px;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     .container-dados-pix .logo-nubank {
-        width: 25px;
+        width: 35px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .container-pagamento {
+        margin-top: 10px;
+    }
+
+    .container-qrcode h1 {
+        font-size: 2.4rem;
+    }
+
+    .container-qrcode p {
+        font-size: 1.6rem;
+    }
+
+    .container-qrcode .qrcode {
+        width: 200px;
+        height: 200px;
+    }
+
+    .container-qrcode .copy-icon {
+        font-size: 1.6rem;
+    }
+
+    .container-dados-pix .dados div {
+        margin-bottom: 8px;
+        font-size: 1.6rem;
     }
 
     .container-pagamento p:last-child {
-        text-align: center;
+        font-size: 1.6rem;
+        margin: 10px;
     }
 
     footer p {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
-
-
 }
