@@ -57,10 +57,10 @@ app.post("/comprar", async (req, res) => {
         }
 
         const compra = await Rifa.create({
-            Nome: nome.trim(),
-            Contato: contato,
-            Numeros: numeros,
-            Status: "Aguardando Pagamento"
+            nome: nome.trim(),
+            contato: contato,
+            numeros: numeros,
+            status: "Aguardando Pagamento"
         });
 
         res.json({ sucesso: true, compra });
