@@ -47,7 +47,7 @@ app.post("/comprar", async (req, res) => {
         }
 
         const jaVendidos = await Rifa.findOne({
-            Numeros: { $in: numeros }
+            numeros: { $in: numeros }
         });
 
         if (jaVendidos) {
@@ -56,22 +56,12 @@ app.post("/comprar", async (req, res) => {
             });
         }
 
-        const compra = await Rifa.findOneAndUpdate(
-            { Nome: nome.trim() },
-            {
-                $addToSet: { Numeros: { $each: numeros } },
-                $set: {
-                    Contato,
-                    Status,
-                    Data: new Date(
-                        new Date().toLocaleString("pt-BR", {
-                            timeZone: "America/Sao_Paulo"
-                        })
-                    )
-                }
-            },
-            { new: true, upsert: true }
-        );
+        const compra = await Rifa.create({
+            Nome: nome.trim(),
+            Contato: contato,
+            Numeros: numeros,
+            Status: "Aguardando Pagamento"
+        });
 
         res.json({ sucesso: true, compra });
 
