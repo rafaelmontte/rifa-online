@@ -24,6 +24,22 @@ body {
     padding: 0 10px;
 }
 
+.tabela {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.tabela div {
+    width: 100%;
+}
+
+.tabela div h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+
 .home {
     width: 100%;
     max-width: 900px;

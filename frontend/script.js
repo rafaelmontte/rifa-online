@@ -9,6 +9,14 @@ async function carregarVendidos() {
     vendidos = await res.json();
 }
 
+const tabela = document.getElementById("tabela");
+const h1 = document.createElement("h1")
+const div = document.createElement("div")
+h1.innerText = "EM MANUTENÇÃO"
+
+div.appendChild(h1);
+tabela.appendChild(div);
+
 async function carregarNumeros() {
     await carregarVendidos();
 
@@ -20,6 +28,7 @@ async function carregarNumeros() {
 
     for (let i = inicio; i <= fim; i++) {
         const div = document.createElement("div");
+
         div.textContent = i;
         div.classList.add("numero");
 
@@ -34,11 +43,11 @@ async function carregarNumeros() {
         div.onclick = () =>
             selecionarNumero(i);
         tabela.appendChild(div);
-
     }
 
     document.getElementById("paginaAtual").textContent = pagina;
 }
+
 
 function selecionarNumero(n) {
     if (vendidos.includes(n)) return;
@@ -86,12 +95,12 @@ function modalAlert(message) {
 function closeModal() {
     const section = document.querySelector(".container-modal");
     const closeModal = document.querySelector(".close-modal");
-    
+
     section.addEventListener("click", () => {
         section.style.display = "none";
         document.body.classList.remove('no-scroll')
     });
-    
+
     closeModal.addEventListener("click", () => {
         section.style.display = "none";
         document.body.classList.remove('no-scroll')
