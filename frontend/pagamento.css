@@ -49,7 +49,7 @@ body {
     font-size: 3rem;
 }
 
-.container-qrcode p {
+.container-qrcode > p {
     text-align: center;
     font-weight: 500;
     font-size: 1.6rem;
@@ -69,15 +69,10 @@ body {
 }
 
 .container-qrcode .valor {
+    text-align: center;
     margin: 10px 0 20px;
-    font-size: 2rem;
-    font-weight: 300;
-}
-
-.container-qrcode .valor .preco {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .container-qrcode .copy-icon {
@@ -109,6 +104,13 @@ body {
     content: url(img/copy-outline.svg);
 }
 
+.container-qrcode .obs {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    font-weight: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .container-dados-pix {
     display: flex;
     flex-direction: column;
@@ -118,13 +120,13 @@ body {
 
 .container-dados-pix h2 {
     margin: 2.5rem;
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     font-weight: 400;
 }
 
 .container-dados-pix hr {
     border: 1px solid #eee;
-    width: 50%;
+    width: 70%;
     margin-bottom: 20px;
 }
 
@@ -136,7 +138,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .container-dados-pix .dados div p {
@@ -148,7 +150,7 @@ body {
     margin-bottom: 10px;
 }
 
-.container-pagamento p:last-child {
+.container-pagamento > p:last-child {
     text-align: center;
     font-size: 1.8rem;
     margin: 20px 0 10px;

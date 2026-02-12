@@ -65,12 +65,74 @@ function paginaAnterior() {
     }
 }
 
+function limparContato(contato) {
+    return contato.replace(/\D/g, "");
+}
+
+/* CRIA UM MODAL PARA ALERTAS */
+function modalAlert(message) {
+    const section = document.querySelector(".container-modal");
+    section.style.display = "flex"
+    const alertText = document.querySelector(".message");
+    alertText.innerText = message;
+
+    if (section) {
+        document.body.classList.add('no-scroll')
+        closeModal();
+    }
+}
+
+/* FECHAR MODAL DE ALERTAS */
+function closeModal() {
+    const section = document.querySelector(".container-modal");
+    const closeModal = document.querySelector(".close-modal");
+    
+    section.addEventListener("click", () => {
+        section.style.display = "none";
+        document.body.classList.remove('no-scroll')
+    });
+    
+    closeModal.addEventListener("click", () => {
+        section.style.display = "none";
+        document.body.classList.remove('no-scroll')
+    });
+}
+
+function validaCampos(nome, contato) {
+    if (!nome) {
+        modalAlert("Você deve infomar seu nome");
+        return false;
+    }
+
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        modalAlert("Você deve infomar seu nome");
+        return false;
+    }
+
+    if (nome.length < 3) {
+        modalAlert("Nome deve conter 3 ou mais caracteres");
+        return false;
+    }
+
+    if (!/^\d{10,11}$/.test(contato) || !contato) {
+        modalAlert("Infome um contato válido (DDD + número)");
+        return false;
+    }
+
+    if (numerosSelecionados.length === 0) {
+        modalAlert("Escolha um número");
+        return false;
+    }
+
+    return true;
+}
+
 async function confirmarCompra() {
     const nome = document.getElementById("nome").value.trim();
-    const contato = document.getElementById("contato").value.trim();
+    let contato = document.getElementById("contato").value.trim();
+    contato = limparContato(contato);
 
-    if (!nome || !contato || numerosSelecionados.length === 0) {
-        alert("Preencha o nome, contato e selecione números");
+    if (!validaCampos(nome, contato)) {
         return;
     }
 
@@ -83,13 +145,12 @@ async function confirmarCompra() {
         });
 
         // SALVAR DADOS PARA PAGAMENTO
+        const total = `R$${numerosSelecionados.length * 5},00`;
 
-        const total = `${numerosSelecionados.length * 5},00`;
-
-        localStorage.setItem("numeros", JSON.stringify(numerosSelecionados));
-        localStorage.setItem("total", total);
-        localStorage.setItem("nome", nome);
-        localStorage.setItem("contato", contato);
+        localStorage.setItem("Numeros", JSON.stringify(numerosSelecionados));
+        localStorage.setItem("Total", total);
+        localStorage.setItem("Nome", nome);
+        localStorage.setItem("Contato", contato);
 
         // LIMPAR E IR PARA PAGAMENTO
         numerosSelecionados = [];
@@ -101,6 +162,5 @@ async function confirmarCompra() {
         alert("Erro de conexão com o servidor");
     }
 }
-
 
 carregarNumeros();

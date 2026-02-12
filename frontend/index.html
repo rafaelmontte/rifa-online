@@ -24,13 +24,13 @@
 
         <div class="container-valores">
             <div class="valor-pontos">
-                <h3>Valor</h3> <span>R$5,00</span>
+                <p>Valor</p> <h2>R$5,00</h2>
                 <p>cada</p>
             </div>
             <div class="premio">
                 <p>Prêmio</p>
                 <h3>R$500,00</h3>
-                <span>no PIX</span>
+                <p>no PIX</p>
             </div>
         </div>
 
@@ -39,11 +39,11 @@
             <form class="form">
                 <p>
                     <span>Nome e Sobrenome:</span>
-                    <input type="text" class="nome" id="nome" placeholder="Nome e Sobrenome">
+                    <input type="text" class="nome" id="nome" placeholder="Nome e Sobrenome" required>
                 </p>
                 <p>
                     <span>Contato: Ex: 98 99999-9999</span>
-                    <input type="text" class="contato" name="contato" id="contato" placeholder="Whatssap">
+                    <input type="tel" class="contato" name="contato" id="contato" placeholder="Whatssap" required>
                 </p>
             </form>
         </div>
@@ -54,9 +54,9 @@
     <div class="tabela" id="tabela"></div>
 
     <div class="paginacao">
-        <button onclick="paginaAnterior()">⬅</button>
+        <button onclick="paginaAnterior()">001-200</button>
         <span id="paginaAtual">1</span>
-        <button onclick="proximaPagina()">➡</button>
+        <button onclick="proximaPagina()">201-400</button>
     </div>
 
     <div class="valor-total">
@@ -69,6 +69,17 @@
     <button class="confirmar" onclick="confirmarCompra()">
         Confirmar e ir para o pagamento
     </button>
+
+    <footer>
+        <p>&copy; Todos os direitos para o criador Rafael Monte.</p>
+    </footer>
+
+    <section class="container-modal">
+        <div class="modal">
+            <p class="message"></p>
+            <button class="close-modal">Fechar</button>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

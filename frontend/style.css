@@ -10,7 +10,7 @@
 }
 
 html {
-    font-size: 62.5%;    
+    font-size: 62.5%;
 }
 
 body {
@@ -25,14 +25,8 @@ body {
 }
 
 .home {
-    width: 800px;
-}
-
-.info {
     width: 100%;
-    padding: 0 10px;
-    text-align: center;
-    font-size: 2rem;
+    max-width: 900px;
 }
 
 .home h1 {
@@ -79,11 +73,11 @@ body {
     align-content: center;
 }
 
-.valor-pontos span {
+.valor-pontos h2 {
     font-size: 2rem;
 }
 
-.valor-pontos h3, .valor-pontos p {
+.valor-pontos p {
     font-size: 1.4rem;
 }
 
@@ -100,7 +94,7 @@ body {
     flex-direction: column;
 }
 
-.premio p, .premio span {
+.premio p {
     font-size: 1.6rem;
 }
 
@@ -124,12 +118,20 @@ body {
 .container-input .form {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin: 0 0px 20px;
 }
 
 .container-input .form p {
-    width: 400px;
+    width: 100%;
+}
+
+.container-input .form p:first-child {
+    margin-right: 20px;
+}
+
+.container-input .form p:last-child {
+    margin-left: 20px;
 }
 
 .container-input .form p input {
@@ -152,7 +154,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-p.text {
+.text {
     margin-top: 5px;
     font-size: 1.8rem;
     font-style: italic;
@@ -199,6 +201,14 @@ p.text {
     color: #f1d2d2;
 }
 
+.info {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
 .confirmar {
     margin: 10px 0px 50px;
     padding: 10px 20px;
@@ -214,8 +224,8 @@ p.text {
 }
 
 #paginaAtual {
-    color: #000;
-    font-weight: bold;
+    color: #000000;
+    font-weight: 500;
 }
 
 .paginacao {
@@ -227,9 +237,8 @@ p.text {
 
 .paginacao button {
     margin: 10px;
-    width: 80px;
-    height: 50px;
-    font-size: 3rem;
+    padding: 10px 15px;
+    font-size: 2rem;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -245,7 +254,57 @@ p.text {
 }
 
 .valor-total span {
-    font-size: 2.6rem;
+    font-size: 3rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.container-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #00000046;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-modal .modal {
+    position: relative;
+    width: 90vw;
+    max-width: 600px;
+    height: 220px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-modal .modal .message {
+    color: rgb(255, 0, 0);
+    font-family: system-ui;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container-modal .modal .close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    padding: 0 5px;
+    font-size: 2.4rem;
+    background: none;
+    cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -272,6 +331,14 @@ p.text {
     .container-input p {
         min-width: 100%;
         margin-bottom: 10px;
+    }
+
+    .container-input p:first-child {
+        margin-right: 0 !important;
+    }
+
+    .container-input p:last-child {
+        margin-left: 0 !important;
     }
 
     .container-input p input {
@@ -326,4 +393,8 @@ p.text {
         font-size: 2rem;
     }
 
+    .container-modal .modal .message {
+        font-size: 2rem;
+    }
 }
+
