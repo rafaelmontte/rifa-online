@@ -16,21 +16,38 @@ mongoose.connect(process.env.MONGO_URI)
 /* BUSCAR NÚMEROS VENDIDOS */
 app.get("/numeros-vendidos", async (req, res) => {
     const compras = await Rifa.find();
-    const vendidos = compras.flatMap(c => c.numeros);
+    const vendidos = compras.flatMap(c => c.Numeros);
     res.json(vendidos);
 });
+
+function validaDados(nome, contato) {
+    if (!nome || nome.trim().length < 3) {
+        return "Nome inválido";
+    }
+
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        return "Nome deve conter apenas letras";
+    }
+
+    if (!/^\d{10,11}$/.test(contato)) {
+        return "Contato inválido";
+    }
+
+    return null;
+}
 
 /* COMPRAR (AGRUPADO POR NOME) */
 app.post("/comprar", async (req, res) => {
     try {
         const { nome, contato, numeros } = req.body;
+        const erro = validaDados(nome, contato);
 
-        if (!nome || !contato || !numeros || numeros.length === 0) {
+        if (erro || numeros.length === 0) {
             return res.status(400).json({ erro: "Dados inválidos" });
         }
 
         const jaVendidos = await Rifa.findOne({
-            numeros: { $in: numeros }
+            Numeros: { $in: numeros }
         });
 
         if (jaVendidos) {
@@ -40,12 +57,13 @@ app.post("/comprar", async (req, res) => {
         }
 
         const compra = await Rifa.findOneAndUpdate(
-            { nome: nome.trim() },
+            { Nome: nome.trim() },
             {
-                $addToSet: { numeros: { $each: numeros } },
+                $addToSet: { Numeros: { $each: numeros } },
                 $set: {
-                    contato,
-                    data: new Date(
+                    Contato,
+                    Status,
+                    Data: new Date(
                         new Date().toLocaleString("pt-BR", {
                             timeZone: "America/Sao_Paulo"
                         })
@@ -62,7 +80,6 @@ app.post("/comprar", async (req, res) => {
         res.status(500).json({ erro: "Erro no servidor" });
     }
 });
-
 
 app.listen(3000, () =>
     console.log("Servidor rodando na porta 3000")

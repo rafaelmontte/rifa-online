@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
 
 const RifaSchema = new mongoose.Schema({
-    nome: {
+    Nome: {
         type: String,
         required: true
     },
-    contato: {
+    Contato: {
         type: String,
         required: true
     },
-    numeros: {
+    Numeros: {
         type: [Number],
         validate: {
             validator: v => new Set(v).size === v.length,
             message: "Números duplicados não são permitidos"
         }
     },
-    data: {
+    Status: {
+        type: String,
+        default: "Aguardando Pagamento"
+    },
+    Data: {
         type: Date,
         default: () =>
             new Date(
