@@ -249,6 +249,12 @@ body {
     border-radius: 4px;
 }
 
+.paginacao .btn-1.selecionado, .paginacao .btn-2.selecionado {
+    background-color: #9e52e0;
+    color: #fff;
+    box-shadow: inset 1px 1px 2px 0px #000;
+}
+
 .paginacao span {
     font-size: 2rem;
     margin: 0 10px;

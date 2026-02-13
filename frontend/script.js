@@ -51,8 +51,13 @@ function selecionarNumero(n) {
     carregarNumeros();
 }
 
+const btn1 = document.querySelector(".btn-1");
+const btn2 = document.querySelector(".btn-2");
+
 function proximaPagina() {
     if (pagina < 2) {
+        btn2.classList.add("selecionado");
+        btn1.classList.remove("selecionado");
         pagina++;
         carregarNumeros();
     }
@@ -60,6 +65,8 @@ function proximaPagina() {
 
 function paginaAnterior() {
     if (pagina > 1) {
+        btn2.classList.remove("selecionado");
+        btn1.classList.add("selecionado");
         pagina--;
         carregarNumeros();
     }
