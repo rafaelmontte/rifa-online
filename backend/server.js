@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGO_URI)
 /* BUSCAR NÚMEROS VENDIDOS */
 app.get("/numeros-vendidos", async (req, res) => {
     try {
-        const compras = await Rifa.find({ status: "Aguardando Pagamento" });
-        console.log(compras)
+        const compras = await Rifa.find();
+        
         const vendidos = compras.flatMap(c => c.numeros);
         res.json(vendidos);
     } catch (error) {
