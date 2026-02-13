@@ -109,12 +109,12 @@ function closeModal() {
 
 function validaCampos(nome, contato) {
     if (!nome) {
-        modalAlert("Você deve infomar seu nome");
+        modalAlert("Você deve informar seu nome");
         return false;
     }
 
     if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
-        modalAlert("Você deve infomar seu nome");
+        modalAlert("Nome deve conter apenas letras");
         return false;
     }
 
@@ -124,7 +124,7 @@ function validaCampos(nome, contato) {
     }
 
     if (!/^\d{10,11}$/.test(contato) || !contato) {
-        modalAlert("Infome um contato válido (DDD + número)");
+        modalAlert("Informe um contato válido (DDD + número)");
         return false;
     }
 
@@ -156,10 +156,10 @@ async function confirmarCompra() {
         // SALVAR DADOS PARA PAGAMENTO
         const total = `R$${numerosSelecionados.length * 5},00`;
 
-        localStorage.setItem("Numeros", JSON.stringify(numerosSelecionados));
-        localStorage.setItem("Total", total);
-        localStorage.setItem("Nome", nome);
-        localStorage.setItem("Contato", contato);
+        localStorage.setItem("numeros", JSON.stringify(numerosSelecionados));
+        localStorage.setItem("total", total);
+        localStorage.setItem("nome", nome);
+        localStorage.setItem("contato", contato);
 
         // LIMPAR E IR PARA PAGAMENTO
         numerosSelecionados = [];

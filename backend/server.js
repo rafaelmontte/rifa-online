@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
 /* BUSCAR NÚMEROS VENDIDOS */
 app.get("/numeros-vendidos", async (req, res) => {
     const compras = await Rifa.find();
-    const vendidos = compras.flatMap(c => c.Numeros);
+    const vendidos = compras.flatMap(c => c.numeros);
     res.json(vendidos);
 });
 
