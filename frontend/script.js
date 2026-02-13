@@ -6,12 +6,7 @@ const precoAtual = document.getElementById("valor");
 
 async function carregarVendidos() {
     const res = await fetch("https://rifa-online-lfud.onrender.com/numeros-vendidos");
-    dados = await res.json();
-
-    vendidos = dados.map(n => Number(n));
-
-    console.log("VENDIDOS:", vendidos);
-    console.log("TIPO:", typeof vendidos[0]);
+    vendidos = await res.json();
 }
 
 async function carregarNumeros() {
