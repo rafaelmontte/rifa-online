@@ -9,14 +9,6 @@ async function carregarVendidos() {
     vendidos = await res.json();
 }
 
-const tabela = document.getElementById("tabela");
-const h1 = document.createElement("h1")
-const div = document.createElement("div")
-h1.innerText = "EM MANUTENÇÃO"
-
-div.appendChild(h1);
-tabela.appendChild(div);
-
 async function carregarNumeros() {
     await carregarVendidos();
 
@@ -47,7 +39,6 @@ async function carregarNumeros() {
 
     document.getElementById("paginaAtual").textContent = pagina;
 }
-
 
 function selecionarNumero(n) {
     if (vendidos.includes(n)) return;
@@ -96,11 +87,6 @@ function closeModal() {
     const section = document.querySelector(".container-modal");
     const closeModal = document.querySelector(".close-modal");
 
-    section.addEventListener("click", () => {
-        section.style.display = "none";
-        document.body.classList.remove('no-scroll')
-    });
-
     closeModal.addEventListener("click", () => {
         section.style.display = "none";
         document.body.classList.remove('no-scroll')
@@ -139,6 +125,8 @@ function validaCampos(nome, contato) {
 async function confirmarCompra() {
     const nome = document.getElementById("nome").value.trim();
     let contato = document.getElementById("contato").value.trim();
+    const inputNome = document.getElementById("nome");
+    const inputContato = document.getElementById("contato");
     contato = limparContato(contato);
 
     if (!validaCampos(nome, contato)) {
@@ -164,6 +152,10 @@ async function confirmarCompra() {
         // LIMPAR E IR PARA PAGAMENTO
         numerosSelecionados = [];
         carregarNumeros();
+        inputNome.value = ""
+        inputContato.value = ""
+
+        /* CARREGAR PAGINA DE PAGAMENTO */
         window.location.href = "pagamento.html";
 
     } catch (error) {

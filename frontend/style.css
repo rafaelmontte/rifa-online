@@ -24,22 +24,6 @@ body {
     padding: 0 10px;
 }
 
-.tabela {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.tabela div {
-    width: 100%;
-}
-
-.tabela div h1 {
-    text-align: center;
-    font-size: 4rem;
-}
-
 .home {
     width: 100%;
     max-width: 900px;
@@ -224,7 +208,6 @@ body {
     font-size: 2rem;
 }
 
-
 .confirmar {
     margin: 10px 0px 50px;
     padding: 10px 20px;
@@ -282,7 +265,7 @@ footer p {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: #00000046;
+    background-color: #0000008f;
     display: none;
     justify-content: center;
     align-items: center;
@@ -298,14 +281,16 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .container-modal .modal .message {
     color: rgb(0, 0, 0);
     font-family: system-ui;
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 600;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .container-modal .modal .close-modal {

@@ -16,10 +16,6 @@ const RifaSchema = new mongoose.Schema({
             message: "Números duplicados não são permitidos"
         }
     },
-    status: {
-        type: String,
-        default: "Aguardando Pagamento"
-    },
     data: {
         type: Date,
         default: () =>
@@ -28,6 +24,10 @@ const RifaSchema = new mongoose.Schema({
                     timeZone: "America/Sao_Paulo"
                 })
             )
+    },
+    status: {
+        type: String,
+        default: "Aguardando Pagamento"
     }
 });
 
