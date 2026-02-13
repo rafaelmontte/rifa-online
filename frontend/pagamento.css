@@ -152,8 +152,13 @@ body {
 
 .container-pagamento > p:last-child {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 20px 0 10px;
+}
+
+.icone-whatssap {
+    width: 30px;
+    margin-bottom: -5px;
 }
 
 footer p {
