@@ -15,9 +15,14 @@ mongoose.connect(process.env.MONGO_URI)
 
 /* BUSCAR NÚMEROS VENDIDOS */
 app.get("/numeros-vendidos", async (req, res) => {
-    const compras = await Rifa.find();
-    const vendidos = compras.flatMap(c => c.numeros);
-    res.json(vendidos);
+    try {
+        const compras = await Rifa.find({ status: "Aguardando Pagamento" });
+        console.log(compras)
+        const vendidos = compras.flatMap(c => c.numeros);
+        res.json(vendidos);
+    } catch (error) {
+        res.status(500).json({ erro: "Erro ao buscar números" })
+    }
 });
 
 function validaDados(nome, contato) {
