@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "League Spartan", sans-serif;
     outline: none;
     border: none;
 }
@@ -19,7 +20,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, rgba(185, 137, 228, 1) 0%, rgba(172, 102, 237, 1) 50%, rgb(153, 89, 202) 100%);
+    background: linear-gradient(90deg, #cf5df8 0%, #ba26ff 50%, rgb(153, 89, 202) 100%);
     color: #fff;
     padding: 0 10px;
 }
@@ -30,9 +31,11 @@ body {
 }
 
 .home h1 {
-    font-size: 4rem;
+    font-size: 7rem;
     margin: 30px 0 0;
     text-align: center;
+    text-shadow: 2px 2px 1px #00000067;
+    line-height: 80px;
 }
 
 .home>p {
@@ -41,11 +44,19 @@ body {
 
 .home .paragrafo {
     font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    top: -100px;
+    text-shadow: 0 0 5px #0000004b;
 }
 
 .home .descricao {
-    font-size: 2rem;
-    margin: 10px 0;
+    text-shadow: 0 0 5px #0000004b;
+    font-size: 1.8rem;
+    margin: -10px auto 10px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 80%;
 }
 
 .container-valores {
@@ -55,8 +66,9 @@ body {
     width: 100%;
     max-width: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+    margin: 20px 0;
 }
 
 .valor-pontos {
@@ -64,42 +76,48 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-color: #f2f2f2;
     color: #000;
     text-align: center;
     align-content: center;
+    box-shadow: 2px 2px #000;
 }
 
 .valor-pontos h2 {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    margin: 10px 0;
 }
 
 .valor-pontos p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .premio {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     margin: 0 20px;
     border-radius: 50%;
-    background-color: #f2f2f2;
-    color: #000;
+    background: linear-gradient(120deg, #d662ff 0%, #ba26ff 50%, #6d1d92 100%);
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: -5px -2px #fff, -15px -2px 50px #0000003b;
 }
 
 .premio p {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
+    font-weight: 300;
 }
 
 .premio h3 {
-    font-size: 2.8rem;
+    font-size: 4.8rem;
+    margin: 20px;
+    text-shadow: 1px 3px 1px #00000093;
 }
 
 .container-input {
@@ -112,7 +130,8 @@ body {
 
 .container-input h2 {
     font-size: 2.4rem;
-    margin: 3rem 0 0;
+    margin: 20px 0;
+    text-transform: uppercase;
 }
 
 .container-input .form {
@@ -141,7 +160,7 @@ body {
     font-size: 2.4rem;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .container-input p span {
@@ -157,9 +176,8 @@ body {
 .text {
     margin-top: 5px;
     font-size: 1.8rem;
-    font-style: italic;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
 }
 
 .tabela {
@@ -300,7 +318,7 @@ footer p {
 .container-modal .modal .message {
     color: rgb(0, 0, 0);
     font-family: system-ui;
-    font-size: 2.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
@@ -311,10 +329,11 @@ footer p {
     top: 0;
     right: 0;
     color: #000;
-    padding: 0 5px;
-    font-size: 2.4rem;
+    padding: 5px;
+    font-size: 3rem;
     background: none;
     cursor: pointer;
+    font-weight: 300;
 }
 
 .no-scroll {
@@ -325,10 +344,6 @@ footer p {
 
     .home {
         max-width: 90vw;
-    }
-
-    .home h1 {
-        font-size: 3.6rem;
     }
 
     .home .paragrafo {
@@ -383,9 +398,23 @@ footer p {
 
 @media (max-width: 425px) {
 
-    .container-valores {
-        display: flex;
-        justify-content: flex-end;
+    .home .descricao {
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .valor-pontos {
+        width: 125px;
+        height: 125px;
+    }
+
+    .premio {
+        width: 225px;
+        height: 225px;
+    }
+
+    .premio h3 {
+        font-size: 4.4rem;
     }
 
     .tabela {
@@ -398,6 +427,10 @@ footer p {
         font-size: 1.6rem;
     }
 
+    .container-btns {
+        margin: 10px 0;
+    }
+
     .paginacao span {
         font-size: 2rem;
     }
@@ -406,9 +439,46 @@ footer p {
         margin: 0 10px;
         font-size: 2rem;
     }
+}
 
-    .container-modal .modal .message {
-        font-size: 2rem;
+@media (max-width: 376px) {
+    .valor-pontos {
+        width: 100px;
+        height: 100px;
+    }
+
+    .premio {
+        width: 200px;
+        height: 200px;
+    }
+
+    .premio h3 {
+        font-size: 3.8rem;
     }
 }
 
+@media (max-width: 321px) {
+
+    .home h1 {
+        font-size: 5rem;
+    }
+
+    .home .descricao {
+        font-size: 1.4rem;
+        width: 100%;
+    }
+
+    .valor-pontos {
+        width: 100px;
+        height: 100px;
+    }
+
+    .premio {
+        width: 160px;
+        height: 160px;
+    }
+
+    .premio h3 {
+        font-size: 3rem;
+    }
+}
