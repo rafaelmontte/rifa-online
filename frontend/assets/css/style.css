@@ -34,7 +34,7 @@ body .bg {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url('/frontend/assets/img/bg-body.svg');
+    background-image: url('../img/bg-body.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
