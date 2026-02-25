@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login Admin</title>
+</head>
+<body>
+    <section class="container">
+        <div class="container-login">
+            <img src="./assets/img/person-circle-outline.svg" alt="person-login">
+            <h1 class="title">Admin login</h1>
+
+            <form class="form" method="post" id="form">
+                <div class="box-input">
+                    <label for="user">Usúario</label>
+                    <img src="./assets/img/person-outline.svg" alt="user-icon">
+                    <input type="text" name="user" class="user" id="user" required>
+                </div>
+                <div class="box-input">
+                    <label for="user">Senha</label>
+                    <img src="./assets/img/lock-closed-outline.svg" alt="password-icon">
+                    <input type="password" name="password" class="password" id="password" required>
+                    <img class="ver-password" src="./assets/img/eye-outline.svg" alt="ver-password" onclick="eyePassword()">
+                </div>
+                <div class="box-button">
+                    <button class="submit" id="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="./assets/js/login.js"></script>
+</body>
+</html>

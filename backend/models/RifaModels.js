@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// MODELANDO OS DADO NO BANCO
 const RifaSchema = new mongoose.Schema({
     nome: {
         type: String,
