@@ -1,15 +1,26 @@
-const Admin = require('../models/Admin');
+const Admin = require('../models/AdminModels');
+const bcrypt = require('bcrypt');
+const jtw = require('jsonwebtoken');
 
 // ROTA PARA CRIAR LOGIN
 exports.login = async (req, res) => {
+    const { user, password } = req.body;
     try {
-        const { user, password } = req.body;
+        const admin = await Admin.findOne({ user });
+        if (!admin) return res.status(401).json({ message: 'Usúario inválido' });
 
-        const admin = await Admin.create({ user: user, password: password, role: 'admin' });
+        const passwordIsValid = await bcrypt.compare(password, admin.password);
+        if (!passwordIsValid) return res.status(401).json({ message: 'Senha inválida' });
 
-        res.json({ sucesso: true, admin });
+        const token = jtw.sign(
+            { id: admin._id, role: admin.role },
+            'SEGREDO_SUPER_SECRETO',
+            { expiresIn: '1h' }
+        );
+
+        res.json({ token });
 
     } catch (error) {
-        res.status(500).json({ error: "Erro ao criar Admin" })
+        res.status(500).json({ error: "Erro no servidor" });
     }
-}
+};

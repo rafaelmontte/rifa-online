@@ -25,6 +25,10 @@ form.addEventListener('submit', (e) => {
 async function login() {
     const user = document.getElementById("user").value.trim();
     const password = document.getElementById("password").value.trim();
+
+    if(!user || !password) return alert('Preencha os campos!');
+    if(user.length < 3) return alert('Usúario precisa conter mais de 3 caracteres');
+    
     try {
         const response = await fetch("https://rifa-online-lfud.onrender.com/login", {
             method: "POST",
@@ -33,8 +37,11 @@ async function login() {
         });
 
         const data = await response.json();
-        console.log(response)
+        if(!response.ok) return alert(data.message);
 
+        localStorage.setItem('token', data.token);
+        window.location.href = 'sorteio.html';
+        
     } catch (error) {
         console.log(error)
     }
