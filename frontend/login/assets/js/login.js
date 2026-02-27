@@ -35,6 +35,7 @@ async function login() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ user, password })
         });
+        console.log(response)
 
         const data = await response.json();
         if(!response.ok) return alert(data.message);

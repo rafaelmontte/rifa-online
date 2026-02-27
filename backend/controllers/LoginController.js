@@ -7,6 +7,7 @@ exports.login = async (req, res) => {
     const { user, password } = req.body;
     try {
         const admin = await Admin.findOne({ user });
+        console.log(admin)
         if (!admin) return res.status(401).json({ message: 'Usúario inválido' });
 
         const passwordIsValid = await bcrypt.compare(password, admin.password);
