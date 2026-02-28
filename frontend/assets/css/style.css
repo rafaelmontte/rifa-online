@@ -23,27 +23,29 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     padding: 0 10px;
+    background: linear-gradient(120deg, #ba26ff 0%, #ba26ff 50%, #ba26ff 100%);
 }
 
 body .bg {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url('../img/bg-body.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    z-index: -1;    
+}
+
+body .bg img {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
 }
 
 .home {
     width: 100%;
     max-width: 900px;
+    color: #fff;
 }
 
 .home h1 {
@@ -124,7 +126,6 @@ body .bg {
     flex-direction: column;
     box-shadow: -5px -2px #fff, -15px -2px 50px #0000003b;
     filter: drop-shadow(0 0 20px #d662ff);
-
 }
 
 .premio p {
@@ -157,6 +158,8 @@ body .bg {
     display: flex;
     justify-content: space-between;
     margin: 0 0px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
 }
 
 .container-input .form p {
@@ -173,22 +176,15 @@ body .bg {
 
 .container-input .form p input {
     width: 100%;
-    height: 80px;
-    padding: 0 10px;
-    font-size: 2.4rem;
+    font-size: 2rem;
+    padding: 1.5rem 10px;
     border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    font-weight: 500;
+    border: 1px solid #d662ff;
+    background: #fff;
 }
 
 .container-input p span {
     font-size: 1.8rem;
-}
-
-.container-input .form p input::placeholder {
-    font-size: 2rem;
-    color: #cecece;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .text {
@@ -232,9 +228,9 @@ body .bg {
 }
 
 .numero.vendido {
-    background: #f57b3594;
-    cursor: not-allowed;
-    color: #f1d2d2;
+    background: transparent;
+    cursor: auto;
+    color: transparent;
 }
 
 .info {
@@ -253,7 +249,7 @@ body .bg {
     border-radius: 5px;
     font-size: 2.4rem;
     text-transform: uppercase;
-    background-color: rgb(247, 156, 92);
+    background-color: rgb(247, 137, 58);
     cursor: pointer;
     color: #fff;
 }
@@ -283,10 +279,11 @@ body .bg {
     font-size: 2rem;
     cursor: pointer;
     border-radius: 4px;
+    transition: all ease-in 300ms;
 }
 
 .paginacao .btn-1.selecionado, .paginacao .btn-2.selecionado {
-    background-color: #9e52e0;
+    background-color: #a200ff;
     color: #fff;
     box-shadow: inset 1px 1px 2px 0px #000;
 }
@@ -307,7 +304,7 @@ body .bg {
 
 footer p {
     margin-bottom: 5px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .container-modal {

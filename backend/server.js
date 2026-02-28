@@ -7,7 +7,7 @@ const routes = require('./routes/routes')
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.resolve(__dirname, 'fronten')));
 app.use(routes);
 
 /* CONEXÃO COM O BANCO DE DADOS */
