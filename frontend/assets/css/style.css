@@ -255,8 +255,8 @@ body .bg img {
 }
 
 #paginaAtual {
-    color: #000000;
-    font-weight: 500;
+    color: #ffffff;
+    font-family: monospace;
 }
 
 .paginacao {
@@ -274,9 +274,9 @@ body .bg img {
 }
 
 .paginacao button {
-    margin: 10px;
+    margin: 3rem;
     padding: 10px 15px;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all ease-in 300ms;
@@ -328,6 +328,7 @@ footer p {
     justify-content: center;
     align-items: center;
     padding: 5px;
+    transition: all ease-in 300ms;
 }
 
 .container-modal .modal .message {
@@ -368,7 +369,6 @@ footer p {
 }
 
 @media (max-width: 767px) {
-
     .home {
         max-width: 90vw;
     }
@@ -399,11 +399,6 @@ footer p {
 
     .container-input p input {
         width: 100%;
-        font-size: 1.8rem;
-    }
-
-    .container-input p input::placeholder {
-        font-size: 1.6rem;
     }
 
     .tabela {
@@ -418,15 +413,12 @@ footer p {
 
     .confirmar {
         width: 90vw;
-        font-size: 2rem;
     }
-
 }
 
 @media (max-width: 425px) {
 
     .home .descricao {
-        font-size: 1.6rem;
         width: 100%;
     }
 
@@ -451,20 +443,15 @@ footer p {
     .numero {
         aspect-ratio: 1;
         min-height: 34px;
-        font-size: 1.6rem;
     }
 
     .container-btns {
         margin: 10px 0;
     }
 
-    .paginacao span {
-        font-size: 2rem;
-    }
-
+    
     .paginacao button {
-        margin: 0 10px;
-        font-size: 2rem;
+        margin: 0 1rem;
     }
 }
 
@@ -481,6 +468,10 @@ footer p {
 
     .premio h3 {
         font-size: 3.8rem;
+    }
+    
+    .paginacao button {
+        font-size: 2rem;
     }
 }
 
