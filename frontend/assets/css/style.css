@@ -32,7 +32,7 @@ body .bg {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;    
+    z-index: -1;
 }
 
 body .bg img {
@@ -328,10 +328,10 @@ footer p {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    transition: all ease-in 300ms;
 }
 
 .container-modal .modal .message {
+    transition: all ease-in 300ms;
     color: rgb(0, 0, 0);
     font-family: system-ui;
     font-size: 1.8rem;
@@ -449,7 +449,7 @@ footer p {
         margin: 10px 0;
     }
 
-    
+
     .paginacao button {
         margin: 0 1rem;
     }
@@ -469,7 +469,7 @@ footer p {
     .premio h3 {
         font-size: 3.8rem;
     }
-    
+
     .paginacao button {
         font-size: 2rem;
     }
