@@ -110,8 +110,18 @@ function closeModal() {
 }
 
 function validaCampos(nome, contato) {
+    if (!nome && !contato) {
+        modalAlert("Preencha seus dados");
+        return false;
+    }
+
     if (!nome) {
-        modalAlert("Você deve informar seu nome");
+        modalAlert("Informe seu nome e sobrenome");
+        return false;
+    }
+
+    if (!contato) {
+        modalAlert("Informe um número de contato");
         return false;
     }
 
@@ -125,13 +135,13 @@ function validaCampos(nome, contato) {
         return false;
     }
 
-    if (!/^\d{10,11}$/.test(contato) || !contato) {
+    if (!/^\d{10,11}$/.test(contato)) {
         modalAlert("Informe um contato válido (DDD + número)");
         return false;
     }
 
     if (numerosSelecionados.length === 0) {
-        modalAlert("Escolha um número");
+        modalAlert("VAMOS LÁ!!! Escolha seu(s) número");
         return false;
     }
 
