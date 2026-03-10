@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const routes = require('./routes/routes')
+const path = require('path')
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, 'fronten')));
+app.use(express.static(path.resolve(__dirname, 'frontend')));
 app.use(routes);
 
 /* CONEXÃO COM O BANCO DE DADOS */

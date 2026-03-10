@@ -2,16 +2,14 @@ const Admin = require('../models/AdminModels');
 const bcrypt = require('bcrypt');
 const jtw = require('jsonwebtoken');
 
-// ROTA PARA CRIAR LOGIN
+// ROTA PARA FAZER LOGIN
 exports.login = async (req, res) => {
     const { user, password } = req.body;
     try {
         const admin = await Admin.findOne({ user });
-        console.log(admin)
-        if (!admin) return res.status(401).json({ message: 'Usúario inválido' });
-
         const passwordIsValid = await bcrypt.compare(password, admin.password);
-        if (!passwordIsValid) return res.status(401).json({ message: 'Senha inválida' });
+
+        if(!admin || !passwordIsValid) return res.status(401).json({ message: 'Dados Inválidos' });
 
         const token = jtw.sign(
             { id: admin._id, role: admin.role },
