@@ -12,13 +12,13 @@ exports.login = async (req, res) => {
         if (!admin) return res.status(401).json({ message: "Dados Inválidos" });
 
         const passwordIsValid = await bcrypt.compare(password, admin.password);
-        
+
         if (!passwordIsValid) return res.status(401).json({ message: "Dados Inválidos" });
 
         const token = jtw.sign(
             { id: admin._id, role: admin.role },
             'SEGREDO_SUPER_SECRETO',
-            { expiresIn: 60 * 60 }
+            { expiresIn: "10s" }
         );
 
         return res.json({ token });
