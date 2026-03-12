@@ -40,7 +40,7 @@ async function login() {
         if (!response.ok) return alert(data.message);
         
         localStorage.setItem('token', data.token);
-        // window.location.href = '../sorteio/sorteio.html';
+        window.location.href = '../sorteio/sorteio.html';
 
     } catch (error) {
         console.log(error)

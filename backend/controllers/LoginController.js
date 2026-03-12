@@ -8,9 +8,11 @@ exports.login = async (req, res) => {
 
     try {
         const admin = await Admin.findOne({ user });
+
+        if (!admin) return res.status(401).json({ message: "Dados Inválidos" });
+
         const passwordIsValid = await bcrypt.compare(password, admin.password);
         
-        if (!admin) return res.status(401).json({ message: "Dados Inválidos" });
         if (!passwordIsValid) return res.status(401).json({ message: "Dados Inválidos" });
 
         const token = jtw.sign(
