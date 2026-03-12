@@ -160,7 +160,7 @@ async function confirmarCompra() {
     }
 
     try {
-        // SALVAR COMPRA
+        // SALVAR COMPRA (POST)
         await fetch("https://rifa-online-lfud.onrender.com/comprar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

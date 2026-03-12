@@ -1,6 +1,6 @@
 const Rifa = require('../models/RifaModels');
 
-// ROTA PARA COMPRAR NúMEROS
+// ROTA PARA COMPRAR NúMEROS (POST)
 exports.comprarNumeros = async (req, res) => {
     try {
         const { nome, contato, numeros } = req.body;
@@ -34,7 +34,7 @@ exports.comprarNumeros = async (req, res) => {
     }
 }
 
-// ROTA PARA BUSCAR NÚMEROS VENDIDOS
+// ROTA PARA BUSCAR NÚMEROS VENDIDOS (GET)
 exports.numerosVendidos = async (req, res) => {
     try {
         // BUSCANDO OS DADOS DO BANCO

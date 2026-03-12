@@ -6,7 +6,7 @@ const jtw = require('jsonwebtoken');
 exports.login = async (req, res) => {
     console.log('Cheguei aqui')
     const { user, password } = req.body;
-    console.log(req.body)
+
     try {
         const admin = await Admin.findOne({ user });
         const passwordIsValid = await bcrypt.compare(password, admin.password);
