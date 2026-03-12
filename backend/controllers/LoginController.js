@@ -21,6 +21,8 @@ exports.login = async (req, res) => {
             { expiresIn: "10s" }
         );
 
+        console.log(token)
+
         return res.json({ token });
 
     } catch (error) {
