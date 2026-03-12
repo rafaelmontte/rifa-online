@@ -10,7 +10,7 @@ exports.login = async (req, res) => {
         const admin = await Admin.findOne({ user });
         const passwordIsValid = await bcrypt.compare(password, admin.password);
 
-        if (admin !== user || !passwordIsValid) return res.status(401).json({ message: 'Dados Inválidos' });
+        if (!admin !== user || !passwordIsValid) return res.status(401).json({ message: 'Dados Inválidos' });
 
         const token = jtw.sign(
             { id: admin._id, role: admin.role },
