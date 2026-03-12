@@ -4,19 +4,27 @@ const jtw = require('jsonwebtoken');
 
 // ROTA PARA FAZER LOGIN
 exports.login = async (req, res) => {
-    console.log('Cheguei aqui')
     const { user, password } = req.body;
 
     try {
         const admin = await Admin.findOne({ user });
+        
+        if (!admin) {
+            return res.status(401).json({ message: "Dado user inválido" });
+        }
+        
         const passwordIsValid = await bcrypt.compare(password, admin.password);
 
-        if(!admin || !passwordIsValid) return res.status(401).json({ message: 'Dados Inválidos' });
+        if (!passwordIsValid) {
+            return res.status(401).json({ message: "Dado senha inválida" });
+        }
+
+        // if (!admin || !passwordIsValid) return res.status(401).json({ message: 'Dados Inválidos' });
 
         const token = jtw.sign(
             { id: admin._id, role: admin.role },
             'SEGREDO_SUPER_SECRETO',
-            { expiresIn: 60*60 }
+            { expiresIn: 60 * 60 }
         );
 
         return res.json({ token });
